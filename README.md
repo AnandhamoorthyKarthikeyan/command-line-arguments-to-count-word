@@ -5,45 +5,31 @@ To write a python program for getting the word count from the contents of a file
 PC
 Anaconda - Python 3.7
 ## ALGORITHM: 
-## Step 1:
-import sys
-
-## Step 2:
-Assign a variable count =0
-
-## Step 3:
-open a file in read mode
-
-## Step 4:
-iterate a variable (lines) through the file
-
-## Step 5:
-Assign a variable words = lines.split ()
-
-## Step 6:
-Now iterate through the variable and increase the count: and print the count vi
-
-
+## ALGORITHM: 
+### Step 1: Import sys module to use command line arguments.
+### Step 2: Use the open() by getting the file name with "sys.argv[1]" which means the first index of given argument
+### Step 3: Iterate the content of the file using for loop.
+### Step 4: Split the contents into each line using .split() function.
+### Step 5: Iterate the list of lines and increment the value of variable (word) each time.
+### Step 6: Run the program by giving "python prgm.py EX12.txt" on the terminal.
 ## PROGRAM:
 ```
-#Developed By:- ANANDHAMOORTHY.K
-#Register number:-212222100004
+#Developed By: ANANDHAMOORTHY.K
+#Register No: 212222100004
 import sys
-count =0
-with open(sys.argv[1],'r') as f:
-    for lines in f:
-        words = lines.split()
-        count+=len(words)
-print("Number of words in a file:",count)   
+count = {}
+with open(sys.argv[1], 'r') as f:
+    for line in f:
+        for word in line.split():
+            if word not in count:
+                count[word] = 1
+            else:
+                count[word] += 1
+print(count)
+f.close()
 ```
 
 ### OUTPUT:
-![Screenshot 2023-06-08 103437](https://github.com/AnandhamoorthyKarthikeyan/command-line-arguments-to-count-word/assets/119475998/cf02523b-33b2-4438-a3df-ab17793a2fbf)
-![Screenshot 2023-06-08 103455](https://github.com/AnandhamoorthyKarthikeyan/command-line-arguments-to-count-word/assets/119475998/c79c0417-5621-4ce2-87cc-d64b58ef7e77)
-![Screenshot 2023-06-08 103510](https://github.com/AnandhamoorthyKarthikeyan/command-line-arguments-to-count-word/assets/119475998/c8bdc250-14c4-421f-85ac-39da2627ee75)
-
-
-
-
+![Screenshot 2023-06-15 223345](https://github.com/AnandhamoorthyKarthikeyan/command-line-arguments-to-count-word/assets/119475998/b56b1d1a-6ea2-4828-bbec-e78cf26c9214)
 ## RESULT:
 Thus the program is written to find the word count from the contents of a file using command line arguments.
